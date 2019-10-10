@@ -1,0 +1,62 @@
+dn: dc=m06,dc=cat
+dc: m06
+description: assignatura m06
+objectClass: dcObject
+objectClass: organization
+o: m06.cat
+
+dn: ou=maquines,dc=m06,dc=cat
+ou: maquines
+description: Container per a maquines linux
+objectclass: organizationalunit
+
+dn: ou=alumnes,dc=m06,dc=cat
+ou: alumnes
+description: Container per usuaris del sistema linux
+objectclass: organizationalunit
+
+dn: cn=user01,ou=alumnes,dc=m06,dc=cat
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user01
+sn: alumne02
+homephone: 555-222-0016
+mail: user10@edt.org
+description: alumne de 2asix
+ou: 2asix
+uid: user01
+uidNumber: 7001
+gidNumber: 611
+homeDirectory: /tmp/home/2asix/user01
+userPassword: {SHA}BJf+TWdP43GUpvywiRPllu9qMH8=
+
+dn: cn=user02,ou=alumnes,dc=m06,dc=cat
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user02
+sn: alumne02
+homephone: 555-222-0016
+mail: user10@edt.org
+description: alumne de 2asix
+ou: 2asix
+uid: user02
+uidNumber: 7002
+gidNumber: 611
+homeDirectory: /tmp/home/2asix/user02
+userPassword: {SHA}p2WWdWaMKzTwpFbbqlCCADQNw2w=
+
+dn: cn=user03,ou=alumnes,dc=m06,dc=cat
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user03
+sn: alumne03
+homephone: 555-222-0016
+mail: user03@edt.org
+description: alumne de 2asix
+ou: 2asix
+uid: user03
+uidNumber: 7003
+gidNumber: 611
+homeDirectory: /tmp/home/2asix/user03
+userPassword: {SHA}bwkliKQ2ZeJKeReSS6IW9Q+3c30=
+
