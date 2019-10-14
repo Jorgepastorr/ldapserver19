@@ -1,0 +1,9 @@
+dn: cn=Marta Mas,ou=usuaris,dc=edt,dc=org
+changetype: modify 
+raplace: mail
+mail: newmarta@edt.org
+
+dn: cn=Jordi Mas,ou=usuaris,dc=edt,dc=org
+changetype: modify  
+raplace: mail
+mail: newjordi@edt.org
