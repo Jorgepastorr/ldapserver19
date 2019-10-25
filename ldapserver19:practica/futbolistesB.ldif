@@ -1,0 +1,8 @@
+dn: lonom=kaka,ou=productes,dc=edt,dc=org
+objectclass: x-futbolistes
+lonom: kaka
+x-equip: los pimientos
+x-dorsal: 7
+x-web: www.kaka.com
+x-foto: ///var/tmp/foto.jpg
+x-lesionat: FALSE

@@ -1,0 +1,32 @@
+attributetype ( 1.1.2.1.1 NAME 'x-nombremaster'
+	DESC     'nombre de master'
+	EQUALITY caseIgnoreMatch
+	SUBSTR   caseIgnoreSubstringsMatch
+	SYNTAX   1.3.6.1.4.1.1466.115.121.1.15
+	SINGLE-VALUE)
+
+attributetype ( 1.1.2.1.2 NAME 'x-nota'
+	DESC     'nota media del master'
+	SYNTAX   1.3.6.1.4.1.1466.115.121.1.27
+	SINGLE-VALUE)
+
+attributetype ( 1.1.2.1.3 NAME 'x-web'
+	DESC 'pagina web del usuario'
+	EQUALITY caseIgnoreMatch
+	SYNTAX   1.3.6.1.4.1.1466.115.121.1.15 )
+
+attributetype ( 1.1.2.1.4 NAME 'x-foto'
+	DESC 'foto del usuario'
+	SYNTAX   1.3.6.1.4.1.1466.115.121.1.40 )
+
+attributetype ( 1.1.2.1.5 NAME 'x-matriculado'
+	DESC 'matriculado en el master'
+	SYNTAX   1.3.6.1.4.1.1466.115.121.1.7 
+	SINGLE-VALUE)
+
+objectclass ( 1.1.2.2.1 NAME 'x-futbolistes'
+	DESC 'futboleros'
+	SUP TOP
+	AUXILIARY
+	MUST x-equip
+	MAY ( x-dorsal $ x-web $ x-foto $ x-lesionat ))
