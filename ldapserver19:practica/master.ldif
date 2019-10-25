@@ -1,0 +1,24 @@
+dn: uid=kaka,ou=productes,dc=edt,dc=org
+objectclass: inetOrgPerson
+objectclass: x-master
+cn: kaka
+sn: kaka
+uid: kaka
+homePhone: 55-555-555
+mail: locrack@edt.org
+x-nombremaster: hacking
+x-nota: 7
+x-web: www.kaka.com
+x-foto: ///var/tmp/foto.jpg
+x-matriculado: FALSE
+
+dn: uid=koko,ou=productes,dc=edt,dc=org
+objectclass: inetOrgPerson
+objectclass: x-master
+cn: koko
+sn: koko
+uid: koko
+mail: locrack@edt.org
+x-nombremaster: demasiado largo para ser aceptado
+x-nota: 7
+x-matriculado: FALSE

@@ -9,6 +9,7 @@ cp /opt/docker/DB_CONFIG /var/lib/ldap/
 slaptest -f /opt/docker/slapd.conf -F /etc/openldap/slapd.d/  
 
 slapadd -F /etc/openldap/slapd.d -l /opt/docker/edt.org.ldif
+slapadd -F /etc/openldap/slapd.d -l /opt/docker/master.ldif
 
 chown -R ldap:ldap /etc/openldap/slapd.d/
 chown -R ldap:ldap /var/lib/ldap/   

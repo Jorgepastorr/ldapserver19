@@ -1,9 +1,0 @@
-dn: cn=kaka,ou=productes,dc=edt,dc=org
-objectclass: x-futbolistes
-cn: kaka
-sn: kaka
-x-equip: los pimientos
-x-dorsal: 7
-x-web: www.kaka.com
-x-foto: ///var/tmp/foto.jpg
-x-lesionat: FALSE
