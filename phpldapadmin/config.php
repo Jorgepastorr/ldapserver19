@@ -295,7 +295,7 @@ $servers->setValue('server','name','Local LDAP Server');
    'ldaps://ldap.example.com/',
    'ldapi://%2fusr%local%2fvar%2frun%2fldapi'
            (Unix socket at /usr/local/var/run/ldap) */
-$servers->setValue('server','host','172.17.0.2');
+$servers->setValue('server','host','ldapserver');
 
 /* The port your LDAP server listens on (no quotes). 389 is standard. */
 $servers->setValue('server','port',389);
