@@ -7,7 +7,7 @@ add: x-nombremaster
 x-nombremaster: hacking hetico
 -
 add: x-foto
-x-foto: ///opt/docker/photo.jpeg
+x-foto:< file:///opt/docker/photo.jpeg
 -
 add: x-matriculado
 x-matriculado: TRUE

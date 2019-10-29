@@ -9,7 +9,7 @@ mail: locrack@edt.org
 x-nombremaster: hacking
 x-nota: 7
 x-web: www.kaka.com
-x-foto: ///var/tmp/foto.jpg
+x-foto:< file:///opt/docker/photo.jpeg
 x-matriculado: FALSE
 
 dn: uid=koko,ou=productes,dc=edt,dc=org
@@ -19,6 +19,6 @@ cn: koko
 sn: koko
 uid: koko
 mail: locrack@edt.org
-x-nombremaster: demasiado largo para ser aceptado
+x-nombremaster: superbien
 x-nota: 7
 x-matriculado: FALSE
