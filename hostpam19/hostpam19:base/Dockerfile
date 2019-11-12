@@ -7,8 +7,9 @@ LABEL subject="hostpam"
 RUN dnf install -y vim procps iproute nmap util-linux-user finger passwd
 RUN mkdir /opt/docker
 
-RUN useradd anna -p anna
-RUN useradd pere -p pere
-RUN useradd pau -p pau
+COPY * /opt/docker/
 
+RUN chmod +x /opt/docker/startup.sh
 WORKDIR /opt/docker/
+
+CMD /opt/docker/startup.sh
