@@ -1,0 +1,97 @@
+dn: dc=edt,dc=org
+dc: edt
+description: Escola del treball de Barcelona
+objectClass: dcObject
+objectClass: organization
+o: edt.org
+
+dn: ou=grups,dc=edt,dc=org
+ou: groups
+description: Container per a grups d usuaris linux
+objectclass: organizationalunit
+
+dn: ou=usuaris,dc=edt,dc=org
+ou: usuaris
+description: Container per usuaris del sistema linux
+objectclass: organizationalunit
+
+dn: cn=hisx1,ou=grups,dc=edt,dc=org
+objectClass: top
+objectClass: posixGroup
+gidNumber: 610
+memberuid: user01
+memberuid: user02
+
+dn: cn=hisx2,ou=grups,dc=edt,dc=org
+objectClass: top
+objectClass: posixGroup
+gidNumber: 611
+memberuid: user03
+memberuid: user04
+
+dn: cn=Admin System,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: Administrador Sistema
+cn: System Admin
+sn: System
+homephone: 555-222-2225
+mail: anna@edt.org
+description: Watch out for this girl
+ou: system
+ou: admin
+uid: admin
+uidNumber: 10
+gidNumber: 10
+homeDirectory: /tmp/home/admin
+userPassword: {SSHA}4mS0FycWc5bkpW8/a396SGNDTQUlFSX3
+
+dn: cn=user01,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user01
+sn: alumne01
+description: alumne de 1asix
+uid: user01
+uidNumber: 7001
+gidNumber: 610
+loginShell: /bin/bash
+homeDirectory: /tmp/home/1asix/user01
+userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
+
+dn: cn=user02,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user02
+sn: alumne02
+description: alumne de 1asix
+uid: user02
+uidNumber: 7002
+gidNumber: 610
+homeDirectory: /tmp/home/1asix/user02
+loginShell: /bin/bash
+userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
+
+dn: cn=user03,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user03
+sn: alumne03
+description: alumne de 1asix
+uid: user02
+uidNumber: 7003
+gidNumber: 611
+homeDirectory: /tmp/home/1asix/user03
+userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
+
+dn: cn=user04,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user04
+sn: alumne04
+description: alumne de 1asix
+uid: user04
+uidNumber: 7004
+gidNumber: 611
+homeDirectory: /tmp/home/1asix/user04
+userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
