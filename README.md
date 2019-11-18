@@ -1,15 +1,15 @@
 # ldapserver19
 
-- [ldapserver:base](#ldapserver:base)
-- [ldapserver:multi](#ldapserver:multi)
-- [ldapserver:acl](#ldapserver:acl)
-- [ldapserver:schema](#ldapserver:schema)
-- [ldapserver19:grups](#ldapserver19:grups)
+- [ldapserver:base](#ldapserverbase)
+- [ldapserver:multi](#ldapservermulti)
+- [ldapserver:acl](#ldapserveracl)
+- [ldapserver:schema](#ldapserverschema)
+- [ldapserver19:grups](#ldapserver19grups)
 
 - [phpldapadmin](#phpldapadmin)
 
-- [hostpam19:base](#hostpam19:base)
-- [hostpam19:auth](#hostpam19:auth)
+- [hostpam19:base](#hostpam19base)
+- [hostpam19:auth](#hostpam19auth)
 
 
 ## @jorgepastorr
