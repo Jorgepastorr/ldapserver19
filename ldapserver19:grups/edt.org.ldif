@@ -89,7 +89,7 @@ objectclass: inetOrgPerson
 cn: user03
 sn: alumne03
 description: alumne de hisx2
-uid: user02
+uid: user03
 uidNumber: 7003
 gidNumber: 611
 homeDirectory: /tmp/home/hisx2/user03
