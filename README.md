@@ -16,7 +16,7 @@
 
 Repositorio de creación de imágenes de servidor ldap. En todos los containers se rigen por el mismo modo de creación, en su interior el archivo `install.sh` que creara toda la configuración, y el archivo `startup.sh`  que pondrá el servicio en marcha.
 
-### ldapserver:base 
+### ldapserver19:base 
 
 Container con server ldap con uri `ldapserver` base `dc=edt,dc=org`  donde se cargan una serie de usuarios para pruebas.
 
@@ -27,7 +27,7 @@ ldapsearch -x -LLL -h <ip-container> -b dc=edt,dc=org dn
 
 
 
-### ldapserver:multi 
+### ldapserver19:multi 
 
 Container ldap con dos bases de datos base `dc=edt,dc=org` y `dc=m06,dc=cat`
 
@@ -39,7 +39,7 @@ ldapsearch -x -LLL -h <ip-container> -b dc=m06,dc=cat dn
 
 
 
-### ldapserver:acl
+### ldapserver19:acl
 
 Container con server ldap con uri `ldapserver` base `dc=edt,dc=org` , en su interior se encuentra el archivo `acl.ldif`  que modifica la acl de la base de datos.
 
@@ -49,7 +49,7 @@ ldapmodify -x -D 'cn=Sysadmin,cn=config' -w syskey -f acl.ldif
 
 
 
-### ldapserver:schema
+### ldapserver19:schema
 
 Container ldap con diferentes esquemas personalizados.
 
@@ -83,12 +83,12 @@ Container con servidor ldap con un arbol de usuarios y grupos bien asignados
 			- user01
 			- user02
 		- hisx2
-			- user03
-			- user04
+		- hisx3
+		- hisx4
 	- usuaris
 		- user01
 		...
-		- user04
+		- user08
 		
 ```
 
@@ -124,11 +124,11 @@ Este container se tiene que arrancar con `--privileged` para su correcto funcion
 
 ### hostpam19:auth
 
-Container que autentifica usuarios tanto locales como procedentes de un server ldap con uri `ldapserver`  y base `dc=edt,dc=org` , también monta los directorios en el home como `hostpam19:base` .
+Container que autentifica usuarios tanto locales como procedentes de un server ldap con uri `ldapserver`  y base `dc=edt,dc=org` , y monta un directorio tmp en el home via tmpfs.
 
 ```bash
 docker run --name ldapserver -h ldapserver --net ldapnet -d jorgepastorr/ldapserver19
-docker run --name pam -h pam --net ldapnet -it jorgepastorr/hostpam19:auth /bin/bash
+docker run --name pam -h pam --net ldapnet --privileged -it jorgepastorr/hostpam19:auth /bin/bash
 [root@pam docker]\# bash startup.sh
 ```
 
