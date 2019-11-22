@@ -17,6 +17,7 @@ authconfig --enableshadow --enablelocauthorize \
    --enableldapauth \
    --ldapserver='ldapserver' \
    --ldapbase='dc=edt,dc=org' \
+   --enablemkhomedir \
    --updateall
 
- echo 'session  required    pam_mkhomedir.so  silent' >> /etc/pam.d/system-auth
+#echo 'session  required    pam_mkhomedir.so  silent' >> /etc/pam.d/system-auth
