@@ -4,8 +4,7 @@ LABEL version="0.1"
 LABEL autor="@jorgepastorr"
 LABEL subject="hostpam19:scratch"
 
-RUN dnf install -y vim passwd \
-        nss-pam-ldapd openldap-clients authconfig
+RUN dnf install -y passwd nss-pam-ldapd authconfig
 
 RUN mkdir /opt/docker
 WORKDIR /opt/docker/
