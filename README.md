@@ -5,11 +5,12 @@
 - [ldapserver:acl](#ldapserveracl)
 - [ldapserver:schema](#ldapserverschema)
 - [ldapserver19:grups](#ldapserver19grups)
-
 - [phpldapadmin](#phpldapadmin)
-
 - [hostpam19:base](#hostpam19base)
 - [hostpam19:auth](#hostpam19auth)
+- [hostpam19:samba](#hostpam19samba)
+
+
 
 
 ## @jorgepastorr
@@ -130,5 +131,17 @@ Container que autentifica usuarios tanto locales como procedentes de un server l
 docker run --name ldapserver -h ldapserver --net ldapnet -d jorgepastorr/ldapserver19
 docker run --name pam -h pam --net ldapnet --privileged -it jorgepastorr/hostpam19:auth /bin/bash
 [root@pam docker]\# bash startup.sh
+```
+
+
+
+### hostpam19:samba
+
+Container que autentifica usuarios con un servidor ldapserver, y al inicio de sesión de los usuarios ldap monta un recurso samba en el home del usuario. ( para su correcto funcionamiento es necesario ldapserver19 y samba19:pam)
+
+```bash
+docker run --rm --name ldapserver -h ldapserver --net ldapnet -d jorgepastorr/ldapserver19
+docker run --rm --name samba -h samba --net ldapnet --privileged -d jorgepastorr/samba19:pam
+docker run --rm --name pam -h pam --net ldapnet --privileged -it jorgepastorr/hostpam19:samba
 ```
 
