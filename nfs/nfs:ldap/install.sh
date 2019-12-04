@@ -10,9 +10,19 @@ do
     homedir=$( echo $liniaget | cut -d: -f 6 )
 
     if [ ! -d $homedir ];then
-        mkdir -p $homedir
-        cp -ra /etc/skel/. $homedir
-        chown -R $uid:$gid $homedir
+        mkdir -p /exports$homedir
+        chown -R $uid:$gid /exports$homedir
     fi
 
 done
+
+cp /opt/docker/exports /etc/exports
+
+exportfs -ra
+
+rpcbind -i
+/sbin/rpc.statd --no-notify --port 32765 --outgoing-port 32766
+/sbin/rpc.nfsd -V3 -N2 -N4 -d 8
+/sbin/rpc.mountd -V3 -N2 -N4 --port 32767 -F
+
+# /exports/tmp/home/hisx4/user08
