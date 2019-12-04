@@ -13,7 +13,7 @@
 <debug enable="0" />
 
 		<!-- Volume definitions -->
-	<volume user="*" fstype="nfs"  server="nfs"  
+	<volume user="*" fstype="nfs"  server="nfsserver"  
 	path="/exports/tmp/home/%(GROUP)/%(USER)"	mountpoint="~/%(USER)" />
 
 		<!-- pam_mount parameters: General tunables -->
