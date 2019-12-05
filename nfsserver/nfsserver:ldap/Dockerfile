@@ -4,7 +4,7 @@ LABEL version="0.1"
 LABEL autor="@jorgepastorr"
 LABEL subject="nfs:ldap"
 
-RUN dnf install -y vim nfs-utils authconfig nss-pam-ldapd
+RUN dnf install -y vim nfs-utils nss-pam-ldapd authconfig
 
 RUN mkdir /opt/docker
 

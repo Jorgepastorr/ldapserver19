@@ -1,2 +1,2 @@
-/exports/tmp/home 	*(rw,sync)
+/tmp/home 	*(rw,sync)
 

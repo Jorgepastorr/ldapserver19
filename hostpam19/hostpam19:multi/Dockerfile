@@ -2,10 +2,11 @@ FROM fedora:27
 
 LABEL version="0.1"
 LABEL autor="@jorgepastorr"
-LABEL subject="hostpam19:multi"
+LABEL subject="hostpam19:samba"
 
-RUN dnf install -y passwd nss-pam-ldapd authconfig \
-                 nfs-utils pam_mount 
+RUN dnf install -y passwd nss-pam-ldapd \
+                    authconfig nfs-utils pam_mount \
+                    samba-client cifs-utils
 
 RUN mkdir /opt/docker
 WORKDIR /opt/docker/

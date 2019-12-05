@@ -10,8 +10,8 @@ do
     homedir=$( echo $liniaget | cut -d: -f 6 )
 
     if [ ! -d $homedir ];then
-        mkdir -p /exports$homedir
-        chown -R $uid:$gid /exports$homedir
+        mkdir -p $homedir
+        chown -R $uid:$gid $homedir
     fi
 
 done
