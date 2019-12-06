@@ -1,0 +1,45 @@
+version: "2"
+services:
+  ldap:
+    image: jorgepastorr/ldapserver19:latest
+    container_name: ldapserver
+    hostname: ldapserver
+    ports: 
+      - "389:389"
+    networks:
+     - mynet
+  samba:
+    image: jorgepastorr/samba19:pam
+    container_name: samba
+    hostname: samba
+    volumes:
+      - "homes:/tmp/home"
+    ports:
+      - "139:139"
+      - "445:445"
+    networks:
+     - mynet
+  nfs:
+    image: jorgepastorr/nfsserver:ldap
+    container_name: nfsserver
+    hostname: nfsserver
+    volumes:
+      - "homes:/tmp/home"
+        #    ports:
+        #- "111:111"
+        #- "2049:2049"
+    privileged: true
+    networks:
+     - mynet
+  pam:
+    image: jorgepastorr/hostpam19:multi
+    container_name: pam
+    hostname: pam
+    networks:
+     - mynet
+    privileged: true
+networks:
+  mynet:
+volumes:
+  homes:
+

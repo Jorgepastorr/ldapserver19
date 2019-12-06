@@ -3,7 +3,7 @@
 ```bash
 docker run --rm --name ldapserver -h ldapserver --net ldapnet -d jorgepastorr/ldapserver19
 
-docker run --rm --name samba -h samba --net ldapnet --privileged -d jorgepastorr/samba19:pam
+docker run --rm --name samba -h samba --net ldapnet -v homes:/tmp/home --privileged -d jorgepastorr/samba19:pam
 
 docker run --rm --name pam -h pam --net ldapnet --privileged -it jorgepastorr/hostpam19:samba
 ```

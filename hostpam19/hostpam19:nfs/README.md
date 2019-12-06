@@ -11,7 +11,7 @@ Es necesario un volumen exports para el servidor nfs, este guardara los director
 ```bash
 docker run --rm --name ldapserver -h ldapserver --net ldapnet -d jorgepastorr/ldapserver19
 
-docker run --rm --name nfsserver -h nfsserver --net ldapnet -v exports:/tmp/home/ --privileged -d jorgepastorr/nfsserver:ldap
+docker run --rm --name nfsserver -h nfsserver --net ldapnet -v homes:/tmp/home --privileged -d jorgepastorr/nfsserver:ldap
 
 docker run --rm --name pam -h pam --privileged --net ldapnet -it jorgepastorr/hostpam19:nfs
 ```

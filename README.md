@@ -9,6 +9,8 @@
 - [hostpam19:base](#hostpam19base)
 - [hostpam19:auth](#hostpam19auth)
 - [hostpam19:samba](#hostpam19samba)
+- [hostpam19:nfs](#hostpam19nfs)
+- [hostpam19:multi](#hostpam19multi)
 
 
 
@@ -145,3 +147,29 @@ docker run --rm --name samba -h samba --net ldapnet --privileged -d jorgepastorr
 docker run --rm --name pam -h pam --net ldapnet --privileged -it jorgepastorr/hostpam19:samba
 ```
 
+### hostpam19:nfs
+
+Container que autentifica usuarios con un servidor ldapserver, y al inicio de sesión de los usuarios ldap monta un directorio por nfs en el home del usuario
+
+```bash
+docker run --rm --name ldapserver -h ldapserver --net ldapnet -d jorgepastorr/ldapserver19
+docker run --rm --name nfsserver -h nfsserver --net ldapnet -v homes:/tmp/home --privileged -d jorgepastorr/nfsserver:ldap
+docker run --rm --name pam -h pam --net ldapnet --privileged -it jorgepastorr/hostpam19:nfs
+```
+
+### hostpam19:multi
+
+Container que autentifica usuarios con un servidor ldapserver, y al inicio de sesión de los usuarios ldap monta un directorio en su home, según el grupo de usuarios monta via nfs o samba.
+
+```bash
+docker run --rm --name ldapserver -h ldapserver --net ldapnet -d jorgepastorr/ldapserver19
+docker run --rm --name nfsserver -h nfsserver --net ldapnet -v homes:/tmp/home --privileged -d jorgepastorr/nfsserver:ldap
+docker run --rm --name samba -h samba --net ldapnet -v homes:/tmp/home --privileged -d jorgepastorr/samba19:pam
+docker run --rm --name pam -h pam --net ldapnet --privileged -it jorgepastorr/hostpam19:nfs
+```
+
+También es posible con.
+
+```bash
+docker-compose up -d
+```
