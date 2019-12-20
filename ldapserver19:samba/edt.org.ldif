@@ -1,0 +1,166 @@
+dn: dc=edt,dc=org
+dc: edt
+description: Escola del treball de Barcelona
+objectClass: dcObject
+objectClass: organization
+o: edt.org
+
+dn: ou=grups,dc=edt,dc=org
+ou: groups
+description: Container per a grups d usuaris linux
+objectclass: organizationalunit
+
+dn: ou=usuaris,dc=edt,dc=org
+ou: usuaris
+description: Container per usuaris del sistema linux
+objectclass: organizationalunit
+
+dn: ou=hosts,dc=edt,dc=org
+ou: hosts
+description: Container per a hosts linux
+objectclass: organizationalunit
+
+dn: ou=domains,dc=edt,dc=org
+ou: domains
+description: Container per a domains linux
+objectclass: organizationalunit
+
+dn: cn=hisx1,ou=grups,dc=edt,dc=org
+objectClass: posixGroup
+gidNumber: 610
+memberuid: user01
+memberuid: user02
+
+dn: cn=hisx2,ou=grups,dc=edt,dc=org
+objectClass: posixGroup
+gidNumber: 611
+memberuid: user03
+memberuid: user04
+
+dn: cn=hisx3,ou=grups,dc=edt,dc=org
+objectClass: posixGroup
+gidNumber: 612
+memberuid: user05
+memberuid: user06
+
+dn: cn=hisx4,ou=grups,dc=edt,dc=org
+objectClass: top
+objectClass: posixGroup
+gidNumber: 613
+memberuid: user07
+memberuid: user08
+
+dn: cn=Admin System,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: Administrador Sistema
+cn: System Admin
+sn: System
+homephone: 555-222-2225
+mail: anna@edt.org
+description: Watch out for this girl
+ou: system
+ou: admin
+uid: admin
+uidNumber: 10
+gidNumber: 10
+homeDirectory: /tmp/home/admin
+userPassword: {SSHA}4mS0FycWc5bkpW8/a396SGNDTQUlFSX3
+
+dn: cn=user01,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user01
+sn: alumne01
+description: alumne de hisx1
+uid: user01
+uidNumber: 7001
+gidNumber: 610
+loginShell: /bin/bash
+homeDirectory: /tmp/home/hisx1/user01
+userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
+
+dn: cn=user02,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user02
+sn: alumne02
+description: alumne de hisx1
+uid: user02
+uidNumber: 7002
+gidNumber: 610
+homeDirectory: /tmp/home/hisx1/user02
+loginShell: /bin/bash
+userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
+
+dn: cn=user03,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user03
+sn: alumne03
+description: alumne de hisx2
+uid: user03
+uidNumber: 7003
+gidNumber: 611
+homeDirectory: /tmp/home/hisx2/user03
+userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
+
+dn: cn=user04,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user04
+sn: alumne04
+description: alumne de hisx2
+uid: user04
+uidNumber: 7004
+gidNumber: 611
+homeDirectory: /tmp/home/hisx2/user04
+userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
+
+dn: cn=user05,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user05
+sn: alumne05
+description: alumne de hisx3
+uid: user05
+uidNumber: 7005
+gidNumber: 612
+homeDirectory: /tmp/home/hisx3/user05
+userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
+
+dn: cn=user06,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user06
+sn: alumne06
+description: alumne de hisx3
+uid: user06
+uidNumber: 7006
+gidNumber: 612
+homeDirectory: /tmp/home/hisx3/user06
+userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
+
+dn: cn=user07,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user07
+sn: alumne07
+description: alumne de hisx4
+uid: user07
+uidNumber: 7007
+gidNumber: 613
+homeDirectory: /tmp/home/hisx4/user07
+userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
+
+dn: cn=user08,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user08
+sn: alumne08
+description: alumne de hisx4
+uid: user08
+uidNumber: 7008
+gidNumber: 613
+homeDirectory: /tmp/home/hisx4/user08
+userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
