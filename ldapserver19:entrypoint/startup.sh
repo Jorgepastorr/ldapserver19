@@ -1,7 +1,6 @@
 #!/bin/bash
 
 
-cp /opt/docker/ldap.conf /etc/openldap/.
 
 case $1 in
     "initdb") 
@@ -15,7 +14,7 @@ case $1 in
         bash /opt/docker/startService.sh ;;
     "listdn") 
         slapcat | grep dn ;;
-    "") 
+    ""|"start") 
         bash /opt/docker/startService.sh ;;
      *) 
         eval "$@" ;;
